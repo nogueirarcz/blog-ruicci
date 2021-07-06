@@ -6,3 +6,6 @@ from .models import Post
 class PostAdmin(admin.ModelAdmin):
 
     list_display = ('title', 'slug', 'author', 'created', 'updated')
+
+    prepopulated_fields = {'slug': ('title',)}
+    
